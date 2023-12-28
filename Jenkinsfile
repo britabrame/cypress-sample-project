@@ -17,21 +17,24 @@ pipeline{
 
         stage('Testing'){
             steps{
-                bat "npm install cypress --save-dev"
-               
-                bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
-                
-                publishHTML (
-                    target : [allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'reports',
-                    reportFiles: 'myreport.html',
-                    reportName: 'My Reports',
-                    reportTitles: 'The Report'])
-            }
+                bat "npm install cypress --save-dev"             
+                bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}" 
         }
 
+        stage('Publish results'){
+            steps{                
+                publishHTML (
+                    target : [
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: "reports",
+                        reportFiles: "myreport.html",
+                        reportName: "My Reports",
+                        reportTitles: "The Report"])
+            }
+            }
+        }
         stage('Deploying'){
             steps{
                 echo "Deploying the application"
