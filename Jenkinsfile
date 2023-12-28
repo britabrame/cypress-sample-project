@@ -32,8 +32,4 @@ pipeline{
             }
         }
     }
-
-    post{
-        // publish reports
-    }
 }
