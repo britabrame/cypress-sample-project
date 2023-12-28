@@ -19,6 +19,7 @@ pipeline{
             steps{
                 bat "npm install cypress --save-dev"             
                 bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}" 
+            }
         }
 
         stage('Publish results'){
@@ -33,8 +34,8 @@ pipeline{
                         reportName: "My Reports",
                         reportTitles: "The Report"])
             }
-            }
         }
+        
         stage('Deploying'){
             steps{
                 echo "Deploying the application"
