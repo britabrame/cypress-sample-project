@@ -31,8 +31,8 @@ pipeline{
                         keepAll: true,
                         reportDir: "reports",
                         reportFiles: "myreport.html",
-                        reportName: "My Reports",
-                        reportTitles: "The Report"])
+                        reportName: "my-reports",
+                        reportTitles: "report"])
             }
         }
         
