@@ -34,12 +34,11 @@ This is a Cypress test framework developed to demo basic Cypress e2e tests and J
 	npm run cy:report
 	```
 ### Jenkins
-<details>
-  <summary>Jenkins builds</summary>
-  (Screenshot)[jenkins-images\JenkinsBuilds.png]
-</details>
+Jenkins build for this project:
+![Screenshot](https://github.com/britabrame/cypress-sample-project/blob/master/jenkins-images/JenkinsBuilds.png?raw=true)
+
 <details>  
-	<summary>Console output from successful Jenkins pipeline</summary>  
+	<summary>Console output from successful Jenkins build</summary>  
 	<p> 
 	Started by user [Brittany Brame](http://localhost:9090/user/babrame)
 Obtained Jenkinsfile from git [https://github.com/britabrame/cypress-sample-project](https://github.com/britabrame/cypress-sample-project)
