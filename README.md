@@ -34,7 +34,7 @@ This is a Cypress test framework developed to demo basic Cypress e2e tests and J
 	npm run cy:report
 	```
 ### Jenkins
-Jenkins build for this project:
+Jenkins builds for this project:
 ![Screenshot](https://github.com/britabrame/cypress-sample-project/blob/master/jenkins-images/JenkinsBuilds.png?raw=true)
 
 <details>  
