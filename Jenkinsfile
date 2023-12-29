@@ -18,12 +18,14 @@ pipeline{
         stage('Testing'){
             steps{
                 bat "npm ci"
-                try{
-                    bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
-                } catch (err) {
-                    echo err.getMessage()
-                    currentBuild.result = 'FAILURE'
-                }              
+                script{
+                    try{
+                        bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                    } catch (err) {
+                        echo err.getMessage()
+                        currentBuild.result = 'FAILURE'
+                    }       
+                }       
                 bat "npm run cy:report"
                 echo currentBuild.result
             }
