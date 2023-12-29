@@ -24,7 +24,6 @@ pipeline{
                     } catch (err) {
                         echo err.getMessage()
                         currentBuild.result = 'FAILURE'
-                        error 'Test stage fails'
                     }       
                 }       
                 bat "npm run cy:report"
