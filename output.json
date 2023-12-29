@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666667,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2023-12-29T16:55:53.612Z",
+    "end": "2023-12-29T16:56:15.397Z",
+    "duration": 21785
+  },
+  "results": [
+    {
+      "uuid": "0518ef82-e314-41b6-b087-d068ccfe3bdf",
+      "title": "",
+      "fullFile": "cypress\\e2e\\searching\\searchingSpec.cy.js",
+      "file": "cypress\\e2e\\searching\\searchingSpec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e0e0caf9-c26b-40da-9f89-04ed7c839e76",
+          "title": "Search Box ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "generates correct autosuggest options when the user enters 3 characters",
+              "fullTitle": "Search Box  generates correct autosuggest options when the user enters 3 characters",
+              "timedOut": null,
+              "duration": 4615,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://magento.softwaretestingboard.com');\ncy.get('#search').type('tan');\ncy.wait(2000);\n// Iterate over dropdown options and verify that each contains the typed term\ncy.get('ul[role=\"listbox\"]').find('span.qs-option-name').each(($el, index, $list) => {\n  cy.wrap($el).invoke('text').should('match', /tan/i);\n});",
+              "err": {},
+              "uuid": "4caa3ec5-d23c-48fb-ba87-7ce5ffe1903f",
+              "parentUUID": "e0e0caf9-c26b-40da-9f89-04ed7c839e76",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "allows search using autosuggest options",
+              "fullTitle": "Search Box  allows search using autosuggest options",
+              "timedOut": null,
+              "duration": 11035,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://magento.softwaretestingboard.com');\ncy.get('#search').type('tan');\ncy.get('ul[role=\"listbox\"]', {\n  timeout: 10000\n}).should('be.visible').contains('tank').click();\n// Verify the dynamic search results text displayed in header\ncy.get('.base').should('have.text', 'Search results for: \\'tank\\'');\n// Verify the number of items displayed\ncy.get('.products.list.items.product-items').find('.item.product.product-item').should('have.length', 12);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `ul[role=\"listbox\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `ul[role=\"listbox\"]`, but never found it.\n    at Context.eval (webpack://cypress-sample-project/./cypress/e2e/searching/searchingSpec.cy.js:16:57)",
+                "diff": null
+              },
+              "uuid": "a94f70d4-4ed4-4891-bcf8-fac714f9a560",
+              "parentUUID": "e0e0caf9-c26b-40da-9f89-04ed7c839e76",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "allows search by manually typing a search",
+              "fullTitle": "Search Box  allows search by manually typing a search",
+              "timedOut": null,
+              "duration": 6004,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://magento.softwaretestingboard.com');\n// Manually enter the full serch term and hit Enter\ncy.get('#search').type('tank{enter}');\ncy.wait(2000);\n// Verify the dynamic search results text displayed in header\ncy.get('.base').should('have.text', 'Search results for: \\'tank\\'');\n// Verify the number of items displayed ,\ncy.get('.products.list.items.product-items').find('.item.product.product-item').should('have.length', 12);",
+              "err": {},
+              "uuid": "ba399466-c1f9-4fac-9551-a926dd8244d8",
+              "parentUUID": "e0e0caf9-c26b-40da-9f89-04ed7c839e76",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4caa3ec5-d23c-48fb-ba87-7ce5ffe1903f",
+            "ba399466-c1f9-4fac-9551-a926dd8244d8"
+          ],
+          "failures": [
+            "a94f70d4-4ed4-4891-bcf8-fac714f9a560"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 21654,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

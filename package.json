@@ -182,7 +182,11 @@
     "yauzl": "^2.10.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cleanup": "del /f /q \"cypress/reports/mochawesome-html-report\"",
+    "cy:test": "npm run cleanup && npx cypress run cypress/e2e/*",
+    "merge_reports": "mochawesome-merge cypress/reports/*.json > output.json",
+    "mochawesome_report": "marge --reportDir cypress/reports/mochawesome-html-report -t Cypress_Test_Report -p Cypress_HTML_Report -f Cypress_HTML_Report --charts true output.json",
+    "cy:report": "npm run merge_reports && npm run mochawesome_report"
   },
   "author": "",
   "license": "ISC"
