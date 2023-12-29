@@ -20,14 +20,18 @@ This is a Cypress test framework developed to demo basic Cypress e2e tests and J
 	```
 	git clone https://github.com/britabrame/cypress-sample-project.git
 	```
-1. From the project directory, install dependencies:
+1. From the project home directory, install dependencies:
 	```
 	npm install
 	```
+1. Install cypress:
+   ```
+   npm install cypress
+   ```
 ### Running tests
 * To run tests:
 	```
-	npm run cy:test
+	npx cypress run
 	```
 * To generate reports into the cypress/reports/mochawesome-html-report directory:
 	```
