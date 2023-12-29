@@ -13,7 +13,7 @@ describe('Search Box ', function () {
     it('allows search using autosuggest options', () => {
         cy.visit('https://magento.softwaretestingboard.com')
         cy.get('#search').type('tan')
-        cy.get('ul[role="listbox"]', { timeout: 10000 }).should('be.visible').contains('tank').click()
+        cy.get('#search_autocomplete', { timeout: 10000 }).should('be.visible').contains('tank').click()
         // Verify the dynamic search results text displayed in header
         cy.get('.base').should('have.text', 'Search results for: \'tank\'')
         // Verify the number of items displayed
