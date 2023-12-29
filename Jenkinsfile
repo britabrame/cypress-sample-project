@@ -18,8 +18,11 @@ pipeline{
         stage('Testing'){
             steps{
                 bat "npm ci"
-                bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}" 
+                catchError{
+                    bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                }                 
                 bat "npm run cy:report"
+                echo currentBuild.result
             }
         }
 
