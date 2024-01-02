@@ -24,10 +24,6 @@ This is a Cypress test framework developed to demo basic Cypress e2e tests and J
 	```
 	npm install
 	```
-1. Install cypress:
-   ```
-   npm install cypress
-   ```
 ### Running tests
 * To run tests:
 	```
