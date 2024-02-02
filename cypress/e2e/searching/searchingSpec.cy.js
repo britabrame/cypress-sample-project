@@ -16,7 +16,6 @@ describe('Search Box ', function () {
     })
 
     it('allows search using autosuggest options', () => {
-        // cy.get('#search').type('tan')
         homePage.searchWithAutocomplete('tan', 'tank')
         // Verify the dynamic search results text displayed in header
         searchResultsPage.elements.pageTitleWrapper().should('have.text', 'Search results for: \'tank\'')
