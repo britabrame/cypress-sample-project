@@ -7,8 +7,8 @@ class homePage {
     }
 
     searchAndPressEnter(input) {
-        let inputAndEnterKey = `${input}{enter}`;
-        this.elements.searchBox().type(inputAndEnterKey);
+        // Take user's input and add {enter} to invoke the Enter key and execute search
+        this.elements.searchBox().type(`${input}{enter}`);
     }
 
     searchWithAutocomplete(input, option) {
