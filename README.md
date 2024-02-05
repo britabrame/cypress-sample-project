@@ -1,5 +1,5 @@
 ### About
-This is a Cypress test framework developed to demo basic Cypress e2e tests and Jenkins Pipeline.
+This is a Cypress test framework developed to demo basic Cypress e2e tests and Jenkins Pipeline. Web application under test is [https://magento.softwaretestingboard.com](https://magento.softwaretestingboard.com).
 
 ### Built with
 * Cypress web automation testing tool
@@ -9,7 +9,8 @@ This is a Cypress test framework developed to demo basic Cypress e2e tests and J
 * Jenkins Pipeline
 
 ### Features
-* Demo component tests for verification of the search functionality, located in *cypress/e2e/searching*
+* Test cases for verification of the search functionality located in [cypress/e2e/searching](https://github.com/britabrame/cypress-sample-project/blob/master/cypress/e2e/searching/searchingSpec.cy.js)
+* Page objects located in [cypress/fixtures/pages](https://github.com/britabrame/cypress-sample-project/tree/master/cypress/fixtures/pages)
 * Reports generated using Mochawesome
 * Jenkins pipeline that runs the e2e tests and then publishes an HTML report with results
 
